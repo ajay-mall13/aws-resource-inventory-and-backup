@@ -1,5 +1,39 @@
 #!/bin/bash
 
+
+###############################################################################
+# AWS Resource Inventory Script
+# --------------------------------------------
+# Description : Automates the daily listing of all AWS resources in the account,
+#               saves the output as a JSON file, and uploads it to an S3 bucket for backup.
+# Author      : Ajay Mall
+# Requirements: AWS CLI configured with proper IAM permissions
+
+# Below are the services that are supported by this script:
+# 1. EC2
+# 2. RDS
+# 3. S3
+# 4. CloudFront
+# 5. VPC
+# 6. IAM
+# 7. Route53
+# 8. CloudWatch
+# 9. CloudFormation
+# 10. Lambda
+# 11. SNS
+# 12. SQS
+# 13. DynamoDB
+# 14. VPC
+# 15. EBS
+#
+# The script will prompt the user to enter the AWS region and the service for which the resources need to be listed.
+#
+# Usage: ./aws_resource_list.sh  <aws_region> <aws_service>
+# Example: ./aws_resource_list.sh us-east-1 ec2
+#############################################################################
+
+
+
 # Check input arguments
 if [ $# -ne 2 ]; then
     echo "Usage: ./ajju2.sh <aws_region> <aws_service>"
